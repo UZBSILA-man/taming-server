@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMING.io Clone - Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-pattern: #2d1b18;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Fredoka One', cursive;
+            background-color: var(--bg-pattern);
+            background-image:
+                radial-gradient(circle at 50% 50%, #3e2723 20%, transparent 20%),
+                radial-gradient(circle at 10% 10%, #3e2723 10%, transparent 10%);
+            background-size: 80px 80px;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-container {
+            background: linear-gradient(180deg, #5D4037 0%, #3E2723 100%);
+            border: 6px solid #8D6E63;
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .auth-logo {
+            font-size: 2.2rem;
+            background: linear-gradient(to bottom, #ffa726, #e65100);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(2px 2px 0 #3e2723);
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            background: #fff8e1;
+            border: 3px solid #5D4037;
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: #3e2723;
+        }
+
+        .auth-submit-btn {
+            width: 100%;
+            padding: 15px;
+            color: white;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            margin-top: 10px;
+            cursor: pointer;
+            font-family: 'Fredoka One', cursive;
+            border: 4px solid #2E7D32;
+            border-radius: 8px;
+            background: linear-gradient(180deg, #4CAF50, #388E3C);
+            transition: transform 0.1s;
+        }
+
+        .auth-submit-btn:active {
+            transform: translateY(2px);
+        }
+
+        .btn-back {
+            background: #757575;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 5px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <h2 style="color: #FFD700; font-family: Fredoka One; margin: 0;">CREATE ACCOUNT</h2>
+        <p style="color: white; font-size: 0.9rem;">Join the Taming.io world!</p>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <input type="email" id="reg-email" class="auth-input" placeholder="Gmail">
+            <input type="text" id="reg-user" class="auth-input" placeholder="Username">
+            <input type="password" id="reg-pass" class="auth-input" placeholder="Password">
+        </div>
+
+        <div
+            style="background: linear-gradient(90deg, #FFD700, #FFA000); padding: 10px; border-radius: 8px; margin-top: 10px;">
+            <span style="font-size: 1.5rem;">🍎</span>
+            <span style="color: #3E2723; font-weight: bold; font-size: 1.2rem;">+300 FREE Golden Apples!</span>
+        </div>
+
+        <button id="btn-create" class="auth-submit-btn">CREATE ACCOUNT</button>
+        <button id="btn-back" class="btn-back">BACK TO INDEX</button>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+
+</html>

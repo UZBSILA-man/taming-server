@@ -1,0 +1,9 @@
+node_modules/
+users.json
+index_repaired_section.js
+.gemini/
+.agents/
+.agent/
+_agents/
+_agent/
+tmp/
