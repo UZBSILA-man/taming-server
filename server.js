@@ -17,35 +17,32 @@ wss.on("connection", ws => {
     }));
 
     ws.on("message", msg => {
-
         const data = JSON.parse(msg);
 
         if (data.type === "move") {
-
-            players[id].x = data.x;
-            players[id].y = data.y;
+            players[id] = {
+                x: data.x,
+                y: data.y,
+                name: data.name || "Guest",
+                gold: data.gold || 0,
+                petType: data.petType,
+                petAge: data.petAge
+            };
 
             broadcast({
                 type: "update",
                 id: id,
-                x: data.x,
-                y: data.y
+                ...players[id]
             });
-
         }
-
     });
 
     ws.on("close", () => {
-
         delete players[id];
-
         broadcast({
             type: "remove", id: id
         });
-
     });
-
 });
 
 function broadcast(data) {
